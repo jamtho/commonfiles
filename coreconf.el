@@ -24,15 +24,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; General behaviour
 
-(setq global-linum-mode t
-      
-      electric-indent-mode nil
+(setq electric-indent-mode nil
       
       ido-enable-flex-matching t
       ido-mode 'both
-      
-      tool-bar-mode nil
-      menu-bar-mode nil
 
       compilation-scroll-output 'first-error
       
@@ -42,7 +37,13 @@
 
 (ido-mode t)
 (winner-mode t)
+
 (load-theme 'deeper-blue)
+
+(global-linum-mode t)
+
+(tool-bar-mode -1)
+(menu-bar-mode -1)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
