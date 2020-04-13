@@ -59,7 +59,12 @@
 
 (global-set-key (kbd "M-o") 'other-window)
 (global-set-key (kbd "C-M-o") 'prev-window)
+
+(global-set-key (kbd "C-v") 'scroll-up-half-window)
+(global-set-key (kbd "M-v") 'scroll-down-half-window)
+
 (global-set-key (kbd "C-c g") 'magit-status)
+
 (global-set-key (kbd "C-c m") 'recompile)
 
 (windmove-default-keybindings)
@@ -81,3 +86,15 @@
 (defun prev-window ()
   (interactive)
   (other-window -1))
+
+(defun scroll-up-half-window ()
+  (interactive)
+  (scroll-up-command (floor (/ (window-height) 2))))
+
+(defun scroll-down-half-window ()
+  (interactive)
+  (scroll-down-command (floor (/ (window-height) 2))))
+
+
+
+
