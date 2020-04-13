@@ -58,6 +58,7 @@
 ;; Keys
 
 (global-set-key (kbd "M-o") 'other-window)
+(global-set-key (kbd "C-M-o") 'prev-window)
 (global-set-key (kbd "C-c g") 'magit-status)
 (global-set-key (kbd "C-c m") 'recompile)
 
@@ -76,3 +77,7 @@
         (when (and (buffer-file-name) (file-exists-p (buffer-file-name)) (not (buffer-modified-p)))
           (revert-buffer t t t) )))
     (message "Refreshed open files.") )
+
+(defun prev-window ()
+  (interactive)
+  (other-window -1))
