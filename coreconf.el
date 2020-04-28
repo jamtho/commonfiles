@@ -67,6 +67,8 @@
 
 (global-set-key (kbd "C-c m") 'recompile)
 
+(global-set-key (kbd "C-w") 'kill-region-or-word)
+
 (windmove-default-keybindings)
 
 
@@ -95,6 +97,9 @@
   (interactive)
   (scroll-down-command (floor (/ (window-height) 2))))
 
-
-
-
+(defun kill-region-or-word ()
+  "If a region is selected, kill it. Otherwise backwards kill a word"
+  (interactive)
+  (if (region-active-p)
+    (kill-region (region-beginning) (region-end))
+    (backward-kill-word 1)))
