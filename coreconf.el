@@ -15,10 +15,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Aesthetic (GUI only)
 
-(when (display-graphic-p)
-  (setq ansi-color-names-vector ["#242424" "#e5786d" "#95e454" "#cae682"
-                                 "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"]
-        custom-enabled-themes '(deeper-blue)))
+;; (when (display-graphic-p)
+;;   (setq ansi-color-names-vector ["#242424" "#e5786d" "#95e454" "#cae682"
+;;                                  "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"]
+;;         custom-enabled-themes '(deeper-blue)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -38,7 +38,7 @@
 (ido-mode t)
 (winner-mode t)
 
-(load-theme 'deeper-blue)
+;; (load-theme 'deeper-blue)
 
 (global-linum-mode t)
 
