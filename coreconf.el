@@ -60,8 +60,8 @@
 (global-set-key (kbd "M-o") 'other-window)
 (global-set-key (kbd "C-M-o") 'prev-window)
 
-(global-set-key (kbd "C-v") 'scroll-up-half-window)
-(global-set-key (kbd "M-v") 'scroll-down-half-window)
+(global-set-key (kbd "C-v") 'scroll-up-onethird-window)
+(global-set-key (kbd "M-v") 'scroll-down-onethird-window)
 
 (global-set-key (kbd "C-c g") 'magit-status)
 
@@ -89,13 +89,13 @@
   (interactive)
   (other-window -1))
 
-(defun scroll-up-half-window ()
+(defun scroll-up-onethird-window ()
   (interactive)
-  (scroll-up-command (floor (/ (window-height) 2))))
+  (scroll-up-command (floor (/ (window-height) 3))))
 
-(defun scroll-down-half-window ()
+(defun scroll-down-onethird-window ()
   (interactive)
-  (scroll-down-command (floor (/ (window-height) 2))))
+  (scroll-down-command (floor (/ (window-height) 3))))
 
 (defun kill-region-or-word ()
   "If a region is selected, kill it. Otherwise backwards kill a word"
