@@ -107,3 +107,19 @@
   (if (region-active-p)
     (kill-region (region-beginning) (region-end))
     (backward-kill-word 1)))
+
+(defun xclip-copy-region ()
+  "Pipe the selected region to xclip, to copy to x clipboard"
+  (interactive)
+  (let* ((process-connection-type nil)
+         (str (buffer-substring (region-beginning) (region-end)))
+         (proc (start-process "xclip" nil "xclip")))
+    (process-send-string proc str)
+    (process-send-eof proc)
+    str))
+
+(defun xclip-paste ()
+  "Fetch the clipboard from xclip and insert at the point"
+  (interactive)
+  (call-process "xclip" nil standard-output nil
+                "-o"))
