@@ -69,6 +69,10 @@
 
 (global-set-key (kbd "C-w") 'kill-region-or-word)
 
+(global-set-key (kbd "<f5>")   'kmacro-end-and-call-macro)
+(global-set-key (kbd "S-<f5>") 'kmacro-start-macro)
+(global-set-key (kbd "C-<f5>") 'apply-macro-to-region-lines)
+
 (windmove-default-keybindings)
 
 
