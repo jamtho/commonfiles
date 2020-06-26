@@ -112,8 +112,9 @@
   "Pipe the selected region to xclip, to copy to x clipboard"
   (interactive)
   (let* ((process-connection-type nil)
-         (str (buffer-substring (region-beginning) (region-end)))
-         (proc (start-process "xclip" nil "xclip")))
+         (proc (start-process "xclip" nil "xclip"
+                              "-selection" "clipboard"))
+         (str (buffer-substring (region-beginning) (region-end))))
     (process-send-string proc str)
     (process-send-eof proc)
     str))
@@ -122,4 +123,4 @@
   "Fetch the clipboard from xclip and insert at the point"
   (interactive)
   (call-process "xclip" nil standard-output nil
-                "-o"))
+                "-o" "-selection" "clipboard"))
