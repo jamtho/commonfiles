@@ -124,3 +124,9 @@
   (interactive)
   (call-process "xclip" nil standard-output nil
                 "-o" "-selection" "clipboard"))
+
+(defun xclip-paste-primary ()
+  "As xclip-paste but uses the PRIMARY clipboard"
+  (interactive)
+  (call-process "xclip" nil standard-output nil
+                "-o" "-selection" "primary"))
