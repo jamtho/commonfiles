@@ -51,6 +51,9 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
+(which-key-mode)
+(setq which-key-idle-delay 0.5)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Syntax formatting
