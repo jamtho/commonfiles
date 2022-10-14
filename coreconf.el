@@ -54,6 +54,8 @@
 (which-key-mode)
 (setq which-key-idle-delay 0.5)
 
+(treemacs-project-follow-mode t)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Syntax formatting
