@@ -44,6 +44,7 @@
 
 (ido-mode t)
 (winner-mode t)
+(fido-mode t)
 
 ;; (load-theme 'deeper-blue)
 
