@@ -33,6 +33,7 @@
 (setq electric-indent-mode nil
       
       ido-enable-flex-matching t
+      ido-everywhere t
       ido-mode 'both
 
       compilation-scroll-output 'first-error
