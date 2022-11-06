@@ -70,7 +70,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Keys
 
-(global-set-key (kbd "M-o") 'jamtho/other-window)
+(global-set-key (kbd "M-o") 'other-window)
 (global-set-key (kbd "C-M-o") 'jamtho/prev-window)
 
 (global-set-key (kbd "C-v") 'jamtho/scroll-up-onethird-window)
