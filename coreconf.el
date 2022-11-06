@@ -70,17 +70,17 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Keys
 
-(global-set-key (kbd "M-o") 'other-window)
-(global-set-key (kbd "C-M-o") 'prev-window)
+(global-set-key (kbd "M-o") 'jamtho/other-window)
+(global-set-key (kbd "C-M-o") 'jamtho/prev-window)
 
-(global-set-key (kbd "C-v") 'scroll-up-onethird-window)
-(global-set-key (kbd "M-v") 'scroll-down-onethird-window)
+(global-set-key (kbd "C-v") 'jamtho/scroll-up-onethird-window)
+(global-set-key (kbd "M-v") 'jamtho/scroll-down-onethird-window)
 
 (global-set-key (kbd "C-c g") 'magit-status)
 
 (global-set-key (kbd "C-c m") 'recompile)
 
-(global-set-key (kbd "C-w") 'kill-region-or-word)
+(global-set-key (kbd "C-w") 'jamtho/kill-region-or-word)
 
 (global-set-key (kbd "<f5>")   'kmacro-end-and-call-macro)
 (global-set-key (kbd "S-<f5>") 'kmacro-start-macro)
@@ -93,7 +93,7 @@
 ;; Extra functions
 
 ;; From https://www.emacswiki.org/emacs/RevertBuffer#toc2
-(defun revert-all-buffers ()
+(defun jamtho/revert-all-buffers ()
     "Refreshes all open buffers from their respective files."
     (interactive)
     (dolist (buf (buffer-list))
@@ -102,26 +102,26 @@
           (revert-buffer t t t) )))
     (message "Refreshed open files.") )
 
-(defun prev-window ()
+(defun jamtho/prev-window ()
   (interactive)
   (other-window -1))
 
-(defun scroll-up-onethird-window ()
+(defun jamtho/scroll-up-onethird-window ()
   (interactive)
   (scroll-up-command (floor (/ (window-height) 3))))
 
-(defun scroll-down-onethird-window ()
+(defun jamtho/scroll-down-onethird-window ()
   (interactive)
   (scroll-down-command (floor (/ (window-height) 3))))
 
-(defun kill-region-or-word ()
+(defun jamtho/kill-region-or-word ()
   "If a region is selected, kill it. Otherwise backwards kill a word"
   (interactive)
   (if (region-active-p)
     (kill-region (region-beginning) (region-end))
     (backward-kill-word 1)))
 
-(defun xclip-copy-region ()
+(defun jamtho/xclip-copy-region ()
   "Pipe the selected region to xclip, to copy to x clipboard"
   (interactive)
   (let* ((process-connection-type nil)
@@ -132,13 +132,13 @@
     (process-send-eof proc)
     str))
 
-(defun xclip-paste ()
+(defun jamtho/xclip-paste ()
   "Fetch the clipboard from xclip and insert at the point"
   (interactive)
   (call-process "xclip" nil standard-output nil
                 "-o" "-selection" "clipboard"))
 
-(defun xclip-paste-primary ()
+(defun jamtho/xclip-paste-primary ()
   "As xclip-paste but uses the PRIMARY clipboard"
   (interactive)
   (call-process "xclip" nil standard-output nil
