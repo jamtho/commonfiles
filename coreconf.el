@@ -80,6 +80,8 @@
 
 (global-set-key (kbd "C-c m") 'recompile)
 
+(global-set-key (kbd "C-c s") 'jamtho/switch-to-text-scratch)
+
 (global-set-key (kbd "C-w") 'jamtho/kill-region-or-word)
 
 (global-set-key (kbd "<f5>")   'kmacro-end-and-call-macro)
@@ -143,3 +145,8 @@
   (interactive)
   (call-process "xclip" nil standard-output nil
                 "-o" "-selection" "primary"))
+
+(defun jamtho/switch-to-text-scratch ()
+    (interactive)
+    (switch-to-buffer "*text-scratch*")
+    (visual-line-mode t))
