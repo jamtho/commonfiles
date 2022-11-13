@@ -58,6 +58,10 @@
 
 (treemacs-project-follow-mode t)
 
+(setq-default isearch-lazy-count t)
+(setq-default isearch-allow-scroll t)
+(setq-default lazy-highlight-initial-delay 0)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Syntax formatting
