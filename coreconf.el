@@ -88,6 +88,8 @@
 
 (global-set-key (kbd "C-c i") 'jamtho/ispell-region-or-buffer)
 
+(global-set-key (kbd "C-c t") 'treemacs)
+
 (global-set-key (kbd "C-w") 'jamtho/kill-region-or-word)
 
 (global-set-key (kbd "<f5>")   'kmacro-end-and-call-macro)
