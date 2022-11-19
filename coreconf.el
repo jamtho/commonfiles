@@ -62,6 +62,11 @@
 (setq-default isearch-allow-scroll t)
 (setq-default lazy-highlight-initial-delay 0)
 
+;; Always word wrap markdown files
+(add-hook 'find-file-hook
+          (lambda () (when (string= (file-name-extension buffer-file-name) "md")
+                       (visual-line-mode t))))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Syntax formatting
