@@ -86,6 +86,8 @@
 
 (global-set-key (kbd "C-c s") 'jamtho/switch-to-text-scratch)
 
+(global-set-key (kbd "C-c i") 'jamtho/ispell-region-or-buffer)
+
 (global-set-key (kbd "C-w") 'jamtho/kill-region-or-word)
 
 (global-set-key (kbd "<f5>")   'kmacro-end-and-call-macro)
@@ -154,3 +156,10 @@
     (interactive)
     (switch-to-buffer "*text-scratch*")
     (visual-line-mode t))
+
+(defun jamtho/ispell-region-or-buffer ()
+  "If a region is selected, spell check it. Otherwise spell check the whole buffer"
+  (interactive)
+  (if (region-active-p)
+    (ispell-region (region-beginning) (region-end))
+    (ispell-buffer)))
