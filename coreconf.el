@@ -67,6 +67,9 @@
           (lambda () (when (string= (file-name-extension buffer-file-name) "md")
                        (visual-line-mode t))))
 
+(setq ispell-program-name "aspell")
+(setq ispell-dictionary "en_GB")
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Syntax formatting
