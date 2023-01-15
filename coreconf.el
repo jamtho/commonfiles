@@ -70,6 +70,9 @@
 (setq ispell-program-name "aspell")
 (setq ispell-dictionary "en_GB")
 
+;; Default location; feel free to override in local .emacs
+(setq jamtho/persistent-scratch-file "~/PERSISTENT_SCRATCH.md")
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Syntax formatting
@@ -93,6 +96,7 @@
 (global-set-key (kbd "C-c m") 'recompile)
 
 (global-set-key (kbd "C-c s") 'jamtho/switch-to-text-scratch)
+(global-set-key (kbd "C-c S") 'jamtho/find-file-persistent-scratch)
 
 (global-set-key (kbd "C-c i") 'jamtho/ispell-region-or-buffer)
 
@@ -173,3 +177,7 @@
   (if (region-active-p)
     (ispell-region (region-beginning) (region-end))
     (ispell-buffer)))
+
+(defun jamtho/find-file-persistent-scratch ()
+  (interactive)
+  (find-file jamtho/persistent-scratch-file))
