@@ -163,9 +163,9 @@
                 "-o" "-selection" "primary"))
 
 (defun jamtho/switch-to-text-scratch ()
-    (interactive)
-    (switch-to-buffer "*text-scratch*")
-    (visual-line-mode t))
+  (interactive)
+  (switch-to-buffer "*text-scratch*")
+  (visual-line-mode t))
 
 (defun jamtho/ispell-region-or-buffer ()
   "If a region is selected, spell check it. Otherwise spell check the whole buffer"
